@@ -1,0 +1,21 @@
+<div class="col-md-12">
+  <div *ngFor="let message of messageService.message" id="b">
+    <div class="sidebar">
+      <img [src]="message.user.image" alt="">
+      <div class="content">
+        <div>
+          <div class="text-success">{{message.user.name}}</div>
+          <div class="text-danger"> {{message.date}}</div>
+          <div> {{message.message}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="error">
+    <div class="alert alert-danger"> Bạn chưa đăng nhập</div>
+  </div>
+  <label>
+    <input type="text" [(ngModel)]="message">
+    <input type="button" value="Send" (click)="chatBox()">
+  </label>
+</div>

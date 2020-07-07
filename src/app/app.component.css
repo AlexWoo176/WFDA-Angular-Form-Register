@@ -1,0 +1,14 @@
+.a {
+  float: left;
+}
+
+#image {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+}
+
+#user {
+  position: fixed;
+  right: 0;
+}

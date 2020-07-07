@@ -1,0 +1,31 @@
+img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+#a{
+  float: left;
+  background: aqua;
+}
+#b{
+  padding-left: 30px;
+}
+.sidebar {
+  display: inline-flex;
+  width: 100%;
+}
+
+.content{
+  float: left;
+  padding-left: 20px;
+}
+label{
+  padding-top: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background: #aaaaaa;
+  width: 100%;
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+}

@@ -1,0 +1,84 @@
+<h2 class="text-center">Register</h2>
+<form [formGroup]="register" (ngSubmit)="onSubmit()" class="col-md-6 offset-md-3" novalidate>
+  <div class="form-group row">
+    <label class="col">
+      Name
+      <input type="email" class="form-control" formControlName="name">
+    </label>
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="register.get('name').invalid && register.get('name').touched">
+    Không được bỏ trống,ít nhất 6 ký tự và nhiều nhất 20 ký tự
+  </div>
+
+  <div class="form-group row">
+    <label class="col">
+      Email
+      <input type="email" class="form-control" formControlName="email">
+    </label>
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="register.get('email').invalid && register.get('email').touched">
+    Không đúng định dạng email
+  </div>
+
+  <div class="form-group row">
+    <label class="col">
+      Password
+      <input type="password" class="form-control" formControlName="password">
+    </label>
+  </div>
+  <div class="alert alert-danger" role="alert"
+       *ngIf="register.get('password').invalid && register.get('password').touched">
+    ít nhất là 6 ký tự và nhiều nhất 16 ký tự
+  </div>
+
+  <div class="form-group row">
+    <label class="col">
+      Confirm Password
+      <input type="password" class="form-control" formControlName="confirmPassword">
+    </label>
+  </div>
+  <div class="alert alert-danger" role="alert"
+       *ngIf="register.hasError('notSame')&&register.get('confirmPassword').touched">
+    Password không giống
+  </div>
+
+  <div class="form-group row">
+    <label class="col">
+      Age
+      <input type="number" class="form-control" formControlName="age">
+    </label>
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="register.get('age').invalid && register.get('age').touched">
+    nhỏ nhất 18 và lớn nhất 120 tuổi
+  </div>
+
+  <div class="form-group row">
+    <label class="col">
+      Address
+      <input type="text" class="form-control" formControlName="address">
+    </label>
+  </div>
+  <div class="alert alert-danger" role="alert"
+       *ngIf="register.get('address').invalid && register.get('address').touched">
+    Chưa thêm thông tin địa chỉ
+  </div>
+
+  <div class="form-group row">
+    <label class="col">
+      Image
+      <input type="text" class="form-control" formControlName="image">
+    </label>
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="register.get('image').invalid && register.get('image').touched">
+    chưa có avatar
+  </div>
+  <div class="alert alert-success" role="alert" *ngIf="check==='true'">
+    Đăng ký thành công
+  </div>
+  <div class="alert alert-danger" role="alert" *ngIf="check==='false'">
+    Điền thông tin chưa đúng hoặc email đã tồn tại
+  </div>
+  <div class="form-group">
+    <button class="btn btn-info" type="submit">Submit</button>
+  </div>
+</form>

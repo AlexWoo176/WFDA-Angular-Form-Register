@@ -1,0 +1,21 @@
+img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+#a{
+  display: inline-block;
+  background: #aaaaaa;
+}
+#b{
+  padding-left: 30px;
+}
+.sidebar {
+  display: inline-flex;
+  width: 200px;
+}
+
+.content{
+  display: inline-block;
+  padding-left: 20px;
+}

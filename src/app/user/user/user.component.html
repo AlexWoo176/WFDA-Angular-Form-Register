@@ -1,0 +1,21 @@
+<div id="a">
+  <input type="text" [(ngModel)]="name">
+  <input type="button" value="search" (click)="search()">
+  <div *ngFor="let user of resultSearch">
+    <div>{{user.name}}</div>
+    <div *ngIf="user.status" class="text-success"> Online</div>
+    <div *ngIf="!user.status" class="text-danger"> Offline</div>
+  </div>
+  <div *ngFor="let user of user" id="b">
+    <div class="sidebar">
+      <img [src]="user.image">
+      <div class="content">
+        <div class="text-primary">{{user.name}}</div>
+        <div>
+          <div *ngIf="user.status" class="text-success"> Online</div>
+          <div *ngIf="!user.status" class="text-danger"> Offline</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
